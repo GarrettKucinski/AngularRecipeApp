@@ -2,7 +2,7 @@
     'use strict';
 
     angular.module('app')
-        .controller('RecipesController', function($scope, dataService, $routeParams) {
+        .controller('RecipesController', function($scope, $location, dataService) {
             dataService.getAllCategories(response => {
                 $scope.categories = response.data;
             });
@@ -15,6 +15,10 @@
                 dataService.deleteRecipe(id, response => {
                     $scope.recipes.splice(index, 1);
                 });
+            };
+
+            $scope.addRecipe = () => {
+                $location.path('/add');
             };
         });
 }());
