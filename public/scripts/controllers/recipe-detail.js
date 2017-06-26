@@ -3,6 +3,7 @@
 
     angular.module('app')
         .controller('RecipeDetailController', function($scope, $routeParams, $location, dataService) {
+
             $scope.cancelRecipeEdit = () => {
                 $location.path('/');
             };
@@ -21,5 +22,9 @@
             dataService.getAllCategories(response => {
                 $scope.categories = response.data;
             });
+
+            $scope.saveRecipe = (recipe) => {
+                dataService.saveRecipe(recipe);
+            };
         });
 }());

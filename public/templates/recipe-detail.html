@@ -9,7 +9,7 @@
         <div class="flush-right">
             <!-- TODO Add directives to both the "Save Recipe" and "Cancel"
         buttons in order to handle user clicks. -->
-            <button>Save Recipe</button>
+            <button ng-click="saveRecipe(recipeDetail)">Save Recipe</button>
             <button ng-click="cancelRecipeEdit()" class="secondary">Cancel</button>
         </div>
     </div>
@@ -54,7 +54,7 @@
         <p>
             <select ng-model="recipeDetail.category">
               <option selected value="">Select a Category</option>
-        <option ng-repeat="category in categories" value="{{category.name}}">{{category.name}}</option>
+        <option ng-repeat="category in categories" value="{{ category.name }}">{{ category.name }}</option>
       </select>
         </p>
     </div>
@@ -121,7 +121,7 @@
         </div>
         <div class="grid-30 ">
             <p>
-                <input ng-model="ingredient.condition" type="text ">
+                <input ng-model="ingredient.condition" value="{{ ingredient.condition }}" type="text ">
             </p>
         </div>
         <div class="grid-15 ">

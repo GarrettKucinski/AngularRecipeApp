@@ -1,6 +1,7 @@
 (function() {
     angular.module('app')
         .service('dataService', function($http) {
+
             this.getAllCategories = callback => {
                 $http.get('/api/categories').then(callback);
             };
@@ -14,10 +15,11 @@
             };
 
             this.deleteRecipe = (id, callback) => {
-                $http({
-                    url: `/api/recipes/${id}`,
-                    method: 'DELETE'
-                }).then(callback);
+                $http.delete(`/api/recipes/${id}`).then(callback);
+            };
+
+            this.saveRecipe = (recipe) => {
+                $http.post('http://localhost:5000/api/recipes', recipe);
             };
         });
 }());
