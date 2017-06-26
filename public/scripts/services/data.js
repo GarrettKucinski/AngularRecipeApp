@@ -18,11 +18,12 @@
                 $http.delete(`/api/recipes/${id}`).then(callback);
             };
 
-            this.saveRecipe = (recipe) => {
-                $http.post('/api/recipes', recipe).then(response => {
-                    console.log('Recipe Saved');
-                    console.log('RESPONSE', response.data);
-                });
+            this.saveRecipe = recipeData => {
+                $http.post('/api/recipes', recipeData);
+            };
+
+            this.updateRecipe = (id, recipeData) => {
+                $http.put(`/api/recipes/${id}`, recipeData);
             };
         });
 }());

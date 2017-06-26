@@ -20,8 +20,12 @@
                 $location.path('/');
             };
 
-            $scope.saveRecipe = recipe => {
-                dataService.saveRecipe(recipe);
+            $scope.saveRecipe = recipeData => {
+                dataService.saveRecipe(recipeData);
+            };
+
+            $scope.updateRecipe = (id, recipeData) => {
+                dataService.updateRecipe(id, recipeData);
             };
 
             $scope.addIngredient = recipe => {

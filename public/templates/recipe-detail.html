@@ -4,7 +4,7 @@
     </div>
     <div class="grid-50">
         <div class="flush-right">
-            <button ng-click="editing ? updateRecipe(recipeDetail) : saveRecipe(recipeDetail)">Save Recipe</button>
+            <button ng-click="editing ? updateRecipe(recipeDetail._id, recipeDetail) : saveRecipe(recipeDetail)">Save Recipe</button>
             <button ng-click="cancelRecipeEdit()" class="secondary">Cancel</button>
         </div>
     </div>
