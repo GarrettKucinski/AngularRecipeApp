@@ -36,8 +36,17 @@
                 });
             };
 
+            $scope.removeIngredient = (recipe, index) => {
+                console.log('Should be deleting');
+                recipe.ingredients.splice(index, 1);
+            };
+
             $scope.addStep = recipe => {
                 recipe.steps.push({ "description": "" });
+            };
+
+            $scope.removeStep = (recipe, index) => {
+                recipe.steps.splice(index, 1);
             };
 
             dataService.getRecipes(response => {
