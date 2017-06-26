@@ -47,6 +47,8 @@
     </div>
     <div class="grid-30 ">
         <p>
+            <!--Think I need to set a default value in the controller 
+            if I want to use ng-options here-->
             <select ng-model="recipeDetail.category">
               <option selected value="">Select a Category</option>
         <option ng-repeat="category in categories" value="{{ category.name }}">{{ category.name }}</option>
