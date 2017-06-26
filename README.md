@@ -1,6 +1,6 @@
 # AngularJS Single Page Recipe App
 
-### Steps to run project
+## Steps to run project
 
 Run the command `npm install` to install the required dependencies.
 
