@@ -20,18 +20,20 @@
                 $location.path('/');
             };
 
-            $scope.saveRecipe = (recipe) => {
+            $scope.saveRecipe = recipe => {
                 dataService.saveRecipe(recipe);
             };
 
-            const ingredientTemplate = {
-                "foodItem": "",
-                "condition": "",
-                "amount": ""
+            $scope.addIngredient = recipe => {
+                recipe.ingredients.push({
+                    "foodItem": "",
+                    "condition": "",
+                    "amount": ""
+                });
             };
 
-            $scope.addIngredient = function(recipe) {
-                recipe.ingredients.push(ingredientTemplate);
+            $scope.addStep = recipe => {
+                recipe.steps.push({ "description": "" });
             };
 
             dataService.getRecipes(response => {
