@@ -37,7 +37,6 @@
             };
 
             $scope.removeIngredient = (recipe, index) => {
-                console.log('Should be deleting');
                 recipe.ingredients.splice(index, 1);
             };
 
