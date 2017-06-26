@@ -11,10 +11,12 @@
                 $scope.recipes = response.data;
             });
 
-            $scope.deleteRecipe = (id, index) => {
-                dataService.deleteRecipe(id, response => {
-                    $scope.recipes.splice(index, 1);
-                });
+            $scope.deleteRecipe = (recipe, index) => {
+                if (confirm(`Are you sure you want to delete ${recipe.name}?`)) {
+                    dataService.deleteRecipe(recipe._id, response => {
+                        $scope.recipes.splice(index, 1);
+                    });
+                }
             };
 
             $scope.addRecipe = () => {
