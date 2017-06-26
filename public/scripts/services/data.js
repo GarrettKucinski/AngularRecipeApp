@@ -19,7 +19,10 @@
             };
 
             this.saveRecipe = (recipe) => {
-                $http.post('http://localhost:5000/api/recipes', recipe);
+                $http.post('/api/recipes', recipe).then(response => {
+                    console.log('Recipe Saved');
+                    console.log('RESPONSE', response.data);
+                });
             };
         });
 }());
