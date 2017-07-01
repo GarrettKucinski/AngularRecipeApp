@@ -22,10 +22,12 @@
 
             $scope.saveRecipe = recipeData => {
                 dataService.saveRecipe(recipeData);
+                $location.path('/');
             };
 
             $scope.updateRecipe = (id, recipeData) => {
                 dataService.updateRecipe(id, recipeData);
+                $location.path('/');
             };
 
             $scope.addIngredient = recipe => {
